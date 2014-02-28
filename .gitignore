@@ -1,5 +1,5 @@
 Calculator/*.class
 JSONTree/*.class
 Numbers/*.class
-Numbers/*.token
+Numbers/*.tokens
 *.numbers
