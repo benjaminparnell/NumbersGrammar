@@ -9,38 +9,71 @@ public class JSONTree extends NumbersBaseListener {
   }
 
   @Override
-  public void enterExpression(NumbersParser.ExpressionContext ctx) {
-    System.out.println(indents() + "\"expression\" : {");
+  public void enterAdd(NumbersParser.AddContext ctx) {
+    System.out.println(indents() + "\"Add\" : {");
     indentLevel++;
   }
 
-  @Override public void exitExpression(NumbersParser.ExpressionContext ctx) {
-    System.out.println(indents() + "\"operation\" : \"" + ctx.OP().getText() + "\"");
+  @Override
+  public void exitAdd(NumbersParser.AddContext ctx) {
+    // System.out.println(indents() + "\"op\" : \"+\"");
     indentLevel--;
     System.out.println(indents() + "}");
   }
 
   @Override
-  public void enterSum(NumbersParser.SumContext ctx) {
-    System.out.println(indents() + "\"sum\" : {");
+  public void enterSub(NumbersParser.SubContext ctx) {
+    System.out.println(indents() + "\"Sub\" : {");
     indentLevel++;
   }
 
   @Override
-  public void exitSum(NumbersParser.SumContext ctx) {
-    System.out.println(indents() + "\"operation\" : \"" + ctx.OP().getText() + "\"");
+  public void exitSub(NumbersParser.SubContext ctx) {
+    // System.out.println(indents() + "\"op\" : \"-\"");
+    indentLevel--;
+    System.out.println(indents() + "}");
+  }
+    @Override
+  public void enterDiv(NumbersParser.DivContext ctx) {
+    System.out.println(indents() + "\"Div\" : {");
+    indentLevel++;
+  }
+
+  @Override
+  public void exitDiv(NumbersParser.DivContext ctx) {
+    // System.out.println(indents() + "\"op\" : \"/\"");
+    indentLevel--;
+    System.out.println(indents() + "}");
+  }
+    @Override
+  public void enterMul(NumbersParser.MulContext ctx) {
+    System.out.println(indents() + "\"Mul\" : {");
+    indentLevel++;
+  }
+
+  @Override
+  public void exitMul(NumbersParser.MulContext ctx) {
+    // System.out.println(indents() + "\"op\" : \"*\"");
     indentLevel--;
     System.out.println(indents() + "}");
   }
 
   @Override
-  public void enterValue(NumbersParser.ValueContext ctx) {
-    System.out.println(indents() + "\"value\" : " + ctx.NUMBER().getText());
+  public void enterMod(NumbersParser.ModContext ctx) {
+    System.out.println(indents() + "\"Mod\" : {");
+    indentLevel++;
   }
 
   @Override
-  public void exitValue(NumbersParser.ValueContext ctx) {
+  public void exitMod(NumbersParser.ModContext ctx) {
+    // System.out.println(indents() + "\"op\" : \"%\"");
+    indentLevel--;
+    System.out.println(indents() + "}");
+  }
 
+  @Override
+  public void enterNum(NumbersParser.NumContext ctx) {
+    System.out.println(indents() + "\"Num\" : " + ctx.NUMBER().getText() + ",");
   }
 
   private String indents() {
