@@ -1,4 +1,4 @@
-# Numbers Grammar
+#Numbers Grammar
 
 A simple calculator using ANTLR. Supports:
 
@@ -7,7 +7,7 @@ A simple calculator using ANTLR. Supports:
 * Roman Numerals
 * Brackets (nested)
 
-## Running it.
+##Running it.
 
 Check the ANTLR_PATH variable in the build_parser.sh file is set to the correct
 ANTLR path for your system.
@@ -31,12 +31,12 @@ and `JSONTree` packages respectively.
 The commands will then wait on STDIN. Use <EOF> character (ctrl-d) to terminate.
 You will then see output! Woot!
 
-## Windows?
+##Windows?
 
 Nope.
 
 
-## JSONTree?
+##JSONTree?
 
 The JSONTree package is capable of generating a valid JSON object for this
 grammar, _currently outputting with indents_.
