@@ -1,4 +1,4 @@
-// Generated from Numbers.g4 by ANTLR 4.1
+// Generated from Numbers.g4 by ANTLR 4.2
 
 package numbers;
 
@@ -10,6 +10,72 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  * {@link NumbersParser}.
  */
 public interface NumbersListener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by {@link NumbersParser#RomanNumeral}.
+	 * @param ctx the parse tree
+	 */
+	void enterRomanNumeral(@NotNull NumbersParser.RomanNumeralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NumbersParser#RomanNumeral}.
+	 * @param ctx the parse tree
+	 */
+	void exitRomanNumeral(@NotNull NumbersParser.RomanNumeralContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link NumbersParser#Div}.
+	 * @param ctx the parse tree
+	 */
+	void enterDiv(@NotNull NumbersParser.DivContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NumbersParser#Div}.
+	 * @param ctx the parse tree
+	 */
+	void exitDiv(@NotNull NumbersParser.DivContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link NumbersParser#Add}.
+	 * @param ctx the parse tree
+	 */
+	void enterAdd(@NotNull NumbersParser.AddContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NumbersParser#Add}.
+	 * @param ctx the parse tree
+	 */
+	void exitAdd(@NotNull NumbersParser.AddContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link NumbersParser#Sub}.
+	 * @param ctx the parse tree
+	 */
+	void enterSub(@NotNull NumbersParser.SubContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NumbersParser#Sub}.
+	 * @param ctx the parse tree
+	 */
+	void exitSub(@NotNull NumbersParser.SubContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link NumbersParser#parens}.
+	 * @param ctx the parse tree
+	 */
+	void enterParens(@NotNull NumbersParser.ParensContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NumbersParser#parens}.
+	 * @param ctx the parse tree
+	 */
+	void exitParens(@NotNull NumbersParser.ParensContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link NumbersParser#Dec}.
+	 * @param ctx the parse tree
+	 */
+	void enterDec(@NotNull NumbersParser.DecContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NumbersParser#Dec}.
+	 * @param ctx the parse tree
+	 */
+	void exitDec(@NotNull NumbersParser.DecContext ctx);
+
 	/**
 	 * Enter a parse tree produced by {@link NumbersParser#Mod}.
 	 * @param ctx the parse tree
@@ -64,48 +130,4 @@ public interface NumbersListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitValue(@NotNull NumbersParser.ValueContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link NumbersParser#Add}.
-	 * @param ctx the parse tree
-	 */
-	void enterAdd(@NotNull NumbersParser.AddContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link NumbersParser#Add}.
-	 * @param ctx the parse tree
-	 */
-	void exitAdd(@NotNull NumbersParser.AddContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link NumbersParser#parens}.
-	 * @param ctx the parse tree
-	 */
-	void enterParens(@NotNull NumbersParser.ParensContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link NumbersParser#parens}.
-	 * @param ctx the parse tree
-	 */
-	void exitParens(@NotNull NumbersParser.ParensContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link NumbersParser#Sub}.
-	 * @param ctx the parse tree
-	 */
-	void enterSub(@NotNull NumbersParser.SubContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link NumbersParser#Sub}.
-	 * @param ctx the parse tree
-	 */
-	void exitSub(@NotNull NumbersParser.SubContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link NumbersParser#Div}.
-	 * @param ctx the parse tree
-	 */
-	void enterDiv(@NotNull NumbersParser.DivContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link NumbersParser#Div}.
-	 * @param ctx the parse tree
-	 */
-	void exitDiv(@NotNull NumbersParser.DivContext ctx);
 }

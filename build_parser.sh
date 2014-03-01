@@ -1,11 +1,4 @@
-# Build and test language parser using antlr.
-# install antlr using homebrew with :-
-#   brew install antlr
-# and then make a symbolic link to the command
-#   ln -s /usr/local/Cell/antlr/4.1/bin/antlr4 /usr/local/bin
-# to run antlr from the cli using ~$ antlr4
-
-ANTLR_PATH=/usr/local/Cellar/antlr/4.1/antlr-4.1-complete.jar
+ANTLR_PATH=/usr/local/Cellar/antlr/4.2/antlr-4.2-complete.jar
 TARGET=Numbers
 FILE=$1
 
@@ -17,7 +10,7 @@ reset="$(tput setaf 7)"
 echo "\nGenerating into /${magenta}"$TARGET"${reset}"
 java -jar $ANTLR_PATH -o $TARGET $TARGET.g4
 echo "Compiling using /${magenta}"$TARGET"${reset}"
-javac -cp $ANTLR_PATH  $TARGET/*.java
+javac -Xlint:unchecked -cp $ANTLR_PATH  $TARGET/*.java
 
 if [ ! -z "$FILE" ] ; then
   echo "\nRunning test harness on "$1"...\n"

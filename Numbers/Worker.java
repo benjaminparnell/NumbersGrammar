@@ -4,44 +4,44 @@ import java.util.ArrayDeque;
 
 public class Worker extends NumbersBaseListener {
 
-    public ArrayDeque<Integer> memory;
+    public ArrayDeque<Double> memory;
 
     public Worker() {
-      memory = new ArrayDeque();
+      memory = new ArrayDeque<Double>();
     }
 
     @Override
     public void exitMod(NumbersParser.ModContext ctx) {
-      int right = memory.pop();
-      int left = memory.pop();
+      Double right = memory.pop();
+      Double left = memory.pop();
       memory.push(left % right);
     }
 
     @Override
     public void exitMul(NumbersParser.MulContext ctx) {
-      int right = memory.pop();
-      int left = memory.pop();
+      Double right = memory.pop();
+      Double left = memory.pop();
       memory.push(left * right);
     }
 
     @Override
     public void exitSub(NumbersParser.SubContext ctx) {
-      int right = memory.pop();
-      int left = memory.pop();
+      Double right = memory.pop();
+      Double left = memory.pop();
       memory.push(left - right);
     }
 
     @Override
     public void exitAdd(NumbersParser.AddContext ctx) {
-      int right = memory.pop();
-      int left = memory.pop();
+      Double right = memory.pop();
+      Double left = memory.pop();
       memory.push(left + right);
     }
 
     @Override
     public void exitDiv(NumbersParser.DivContext ctx) {
-      int right = memory.pop();
-      int left = memory.pop();
+      Double right = memory.pop();
+      Double left = memory.pop();
       memory.push(left / right);
     }
 
@@ -52,8 +52,16 @@ public class Worker extends NumbersBaseListener {
 
     @Override
     public void exitNum(NumbersParser.NumContext ctx) {
-      memory.push(Integer.valueOf(ctx.NUMBER().getText()));
+      memory.push(Double.valueOf(ctx.NUMBER().getText()));
     }
 
+    @Override
+    public void exitDec(NumbersParser.DecContext ctx) {
+      memory.push(Double.valueOf(ctx.DECIMAL().getText()));
+    }
 
+    @Override
+    public void exitRomanNumeral(NumbersParser.RomanNumeralContext ctx) {
+      memory.push(RomanNumeral.decode(ctx.ROMANNUMERAL().getText()));
+    }
 }
